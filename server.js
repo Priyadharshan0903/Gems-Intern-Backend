@@ -33,6 +33,10 @@ User.belongsTo(Invitation, { foreignKey: "id" });
 
 app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send(`<h1> Server is running!...</h1>`);
+});
+
 app.post("/invitation", async (req, res) => {
   try {
     const {
@@ -147,6 +151,6 @@ app.put("/edit", async (req, res) => {
   }
 });
 
-app.listen(8081, () => {
+app.listen(8080, () => {
   console.log(`Server started `);
 });
